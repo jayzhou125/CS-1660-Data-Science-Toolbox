@@ -33,3 +33,10 @@ click [Docker get-started](https://www.docker.com/get-started) and follow the gu
 ## To stop
 Close the tabs when you are done with them and run `docker-compose down` to close the services.
 
+## App usage specifics
+1. Rstudio:
+When open Rstudio, it is going to ask you for a username and password. 
+Just type `rstudio` for both the username and password to log in. 
+
+2. 
+
