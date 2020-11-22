@@ -17,9 +17,7 @@ Application supported:
 - Markdown
 
 ## Before starting the tool box
-Make sure you have docker installed.
-
-If you don't know how to install Docker,
+Make sure you have docker installed. If you don't know how to install Docker,
 click [Docker get-started](https://www.docker.com/get-started) and follow the guide. 
 
 
