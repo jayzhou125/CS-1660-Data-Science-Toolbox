@@ -3,6 +3,7 @@ This Data Science ToolBox is a Web Application that use docker to deploy each mi
 
 ## Before starting the tool box
 Make sure you have docker installed.
+Click this link and follow the guide: [https://www.docker.com/get-started]
 
 ## Usage
 1. Clone this repo to your local directory. 
@@ -10,3 +11,4 @@ Make sure you have docker installed.
 3. If you have docker installed, run `docker-compose up -d` to have the application running. 
 	 Docker will then look up images needed for the application, since the images are already push to the docker hub, just wait till it finishes downloading the 	
 	 images. 
+4. Once the set up is done. Open your browser and go to [http://localhost:5000/] to see the application. If your device does not support localhost, head to [http://127.0.0.1:5000/] or your `default machine ip:5000`
