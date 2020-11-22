@@ -11,4 +11,9 @@ Click this link and follow the guide: [Docker get-started](https://www.docker.co
 3. If you have docker installed, run `docker-compose up -d` to have the application running. 
 	 Docker will then look up images needed for the application, since the images are already push to the docker hub, just wait till it finishes downloading the 	
 	 images. 
-4. Once the set up is done. Open your browser and go to [localhost:5000](http://127.0.0.1:5000/) to see the application. If your device does not support localhost, head to your `default machine ip:5000`. 
+4. Once the set up is done. Open your browser and go to [localhost:5000](http://127.0.0.1:5000/) to see the application. If your device does not support localhost, head to your `default-machine-ip:5000`. 
+5. Click on the name of the application and it take you to a new tab which the application will be run on. For specific usage for each applicatin, head to section named **App usage specifics** below.
+
+## To stop
+Close the tabs when you are done with them and run `docker-compose down` to close the services.
+
