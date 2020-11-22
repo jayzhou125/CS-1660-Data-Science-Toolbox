@@ -35,8 +35,9 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 
 ## App usage specifics
 1. Rstudio:
-When open Rstudio, it is going to ask you for a username and password. 
-Just type `rstudio` for both the username and password to log in. 
+
+> When open Rstudio, it is going to ask you for a username and password. 
+> Just type `rstudio` for both the username and password to log in. 
 
 2. 
 
