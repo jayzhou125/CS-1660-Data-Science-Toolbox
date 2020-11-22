@@ -1,19 +1,20 @@
 # CS-1660 Data-Science-Toolbox Final Project
 This Data Science ToolBox is a Web Application that use docker to deploy each micro-services. 
-Application supported:
-	1. Rstudio
-	2. Spyder
-	3. IBM SAS cloud 
-	4. Git bash
-	5. Jupyter Notebook
-	6. Orange
-	7. Visual Studio Code
-	8. Apache Hadoop
-	9. Apache Spark
-	10. Tableau Online
-	11. SonarQube & SonarScanner
-	12. Tensorflow
-	13. Markdown
+
+Application supported: 
+- Rstudio 
+- Spyder
+- IBM SAS cloud 
+- Git bash
+- Jupyter Notebook
+- Orange
+- Visual Studio Code
+- Apache Hadoop
+- Apache Spark
+- Tableau Online
+- SonarQube & SonarScanner
+- Tensorflow
+- Markdown
 
 ## Before starting the tool box
 Make sure you have docker installed.
