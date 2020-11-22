@@ -18,7 +18,10 @@ Application supported:
 
 ## Before starting the tool box
 Make sure you have docker installed.
-Click this link and follow the guide: [Docker get-started](https://www.docker.com/get-started)
+
+If you don't know how to install Docker,
+click [Docker get-started](https://www.docker.com/get-started) and follow the guide. 
+
 
 ## Usage
 1. Clone this repo to your local directory. 
