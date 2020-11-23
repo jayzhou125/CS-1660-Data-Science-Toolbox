@@ -75,7 +75,7 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to a markdown editor where you can edit a markdown text on the left side and see the actual view of it on the right. 
 
 
-## Video work though and demo link: Click [here]()
+## Video work though and demo link: Click [here](https://pitt.box.com/s/dslpd57ueplw8dk5w1pgd0ks1rr428cw)
 
 
 ## Notes for grading:
@@ -83,10 +83,11 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 
 I've also tried to setup another vnc node just to show the show the namenode. But I was having trouble to have the gui connect to the namenode. So the click just give a gui showing the terminal from the novnc container. 
 
-To run a actual hadoop wordcount, you would have to uncomment line# ... in the `docker-compose.yml`. You still need to run `docker exec -it namenode bash` to access the namenode. Hadoop itself works fine. You can access [localhost:9870](http://127.0.0.1:9870) to see details about each node. 
+To run a actual hadoop wordcount, you just comment out my custom image on line#71 uncomment line#69 in the `docker-compose.yml`. You still need to run `docker exec -it namenode bash` to access the namenode. Hadoop itself works fine. You can access [localhost:9870](http://127.0.0.1:9870) to see details about each node. 
 
 **For sonarqube:** I just have the server set up. 
 
 ## Reference and credit links:
+Please see the word file named: CS1660 final project for more details. 
 
 
