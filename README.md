@@ -58,7 +58,7 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to a virtual environment that relects the remote docker command prompt. Type `hadoop` in the command prompt to check the hadoop specifics. You can use the command prompt to access the hdfs file system. 
 
 **9. Apache Spark:**
-> On click, it will take you to a jupyter notebook with spark pre-installed. 
+> On click, it will take you to a jupyter notebook with spark pre-installed. To access a terminal by clicking `new` on the top-right corner, and then click `Termianl`, wchich will kick off a new tab where you can test tensorflow's installation. run `spark-submit --version` to verify the installation. Use command `pyspark` to start a session. 
 
 **10. Tableau:**
 > On click, it will take you to the log in page of Tableau Online. You can log in using you own Tableau account.
