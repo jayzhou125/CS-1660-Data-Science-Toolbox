@@ -58,6 +58,7 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to a virtual environment that relects the remote docker command prompt. Type `hadoop` in the command prompt to check the hadoop specifics. You can use the command prompt to access the hdfs file system. 
 
 **9. Apache Spark:**
+> On click, it will take you to a jupyter notebook with spark pre-installed. 
 
 **10. Tableau:**
 > On click, it will take you to the log in page of Tableau Online. You can log in using you own Tableau account.
