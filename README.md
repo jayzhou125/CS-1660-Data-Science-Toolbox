@@ -75,8 +75,7 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to a markdown editor where you can edit a markdown text on the left side and see the actual view of it on the right. 
 
 
-## Video work though and demo link:
-Click [here]()
+## Video work though and demo link: Click [here]()
 
 
 ## Notes for grading:
