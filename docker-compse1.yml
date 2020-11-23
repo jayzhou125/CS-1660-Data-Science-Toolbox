@@ -1,0 +1,147 @@
+version: "3.8"
+
+services:
+  main:
+    image: jiz156/mainapp
+    ports: 
+      - 5000:5000
+    
+  # mainapp:
+  #   image: jiz156/pygui
+  #   environment:
+  #     - it
+  #     - DISPLAY=host.docker.internal:0
+  #   command: python gui.py
+    # network_mode: "host"
+
+  jupyter-service:
+    image: jiz156/jupyter-no-token
+    container_name: jupyter
+    command: jupyter notebook --allow-root --ip='0.0.0.0' --port=8888 --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    ports:
+      - 8888:8888
+
+  tensorflow-service:
+    image: jiz156/cus-tensor
+    # container_name: tf
+    # command: bash -c source /etc/bash.bashrc && jupyter notebook --allow-root --notebook-dir=/tf --ip '0.0.0.0' --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    ports:
+      - 8889:8888
+
+  rstudio-service:
+    image: rocker/verse
+    ports:
+      - 8787:8787
+
+  git-service:
+    image: jiz156/ttyd-git
+    ports: 
+      - 7681:7681
+    restart: always
+
+  orange-service:
+    image: acopar/orange-docker
+    ports:
+      - 5901:5901
+      - 6901:6901
+
+  vscode-service:
+    image: jiz156/cus-vscode
+    ports:
+      - 8443:8443
+    
+  spark-service:
+    image: jupyter/pyspark-notebook
+    environment:      
+      - JUPYTER_TOKEN=123
+    command: jupyter notebook --allow-root --ip='0.0.0.0' --port=8888 --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    ports:
+      - 8886:8888
+
+  sonar-service:
+    image: sonarqube
+    ports:
+      - 9002:9000
+      - 9092:9092
+
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    # image: jiz156/hadoop-namenode
+    image: jiz156/cus-namenode
+    container_name: namenode
+    restart: always
+    ports:
+      - 9870:9870
+      - 9000:9000
+      # - 8080:8080
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+    environment:
+      - CLUSTER_NAME=test
+      # - DISPLAY=novnc:0.0
+    env_file:
+      - ./hadoop.env
+    # depends_on: 
+    #   - novnc
+    # networks:
+    #   - x11
+
+  # novnc:
+  #   image: theasp/novnc:latest
+  #   environment:
+  #     # Adjust to your screen size
+  #     - DISPLAY_WIDTH=1600
+  #     - DISPLAY_HEIGHT=968
+  #     - RUN_XTERM=yes
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - x11
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode
+    restart: always
+    volumes:
+      - hadoop_datanode:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file:
+      - ./hadoop.env
+  
+  resourcemanager:
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    container_name: resourcemanager
+    restart: always
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+    env_file:
+      - ./hadoop.env
+
+  nodemanager1:
+    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    container_name: nodemanager
+    restart: always
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    env_file:
+      - ./hadoop.env
+  
+  historyserver:
+    image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    container_name: historyserver
+    restart: always
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    volumes:
+      - hadoop_historyserver:/hadoop/yarn/timeline
+    env_file:
+      - ./hadoop.env
+  
+volumes:
+  hadoop_namenode:
+  hadoop_datanode:
+  hadoop_historyserver:
+
+# networks:
+#   x11:
