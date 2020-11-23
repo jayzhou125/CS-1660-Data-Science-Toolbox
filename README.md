@@ -64,6 +64,7 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to the log in page of Tableau Online. You can log in using you own Tableau account.
 
 **11. SonarQube & SonarScanner**
+> On click, it will take you to the page to log in. Type in `admin` for both the username and password to get in. 
 
 **12. Tensorflow:**
 > On click, it will take you to a jupyter notebook page where tensorflow is pre-installed. And a folder named "tensorflow-tutorials" contains several example programs that utilize tensorflow. 
@@ -74,5 +75,16 @@ Close the tabs when you are done with them and run `docker-compose down` to clos
 > On click, it will take you to a markdown editor where you can edit a markdown text on the left side and see the actual view of it on the right. 
 
 
-## Notes:
+## Video work though and demo link:
+Click [here]()
+
+
+## Notes for grading:
+**For Hadoop:** I have utilize the docker file from [](). The docker image onits own works fine. Since we need a on-click action, I have tried to make custom namenode that support vnc so you could visulize the terminal after clicking. However, after many tries, I can only get close to bring up the namenode terminal to the browser and run command like `hdfs` and `hadoop`. But you cannot run a job because I was having trouble starting the namenode, so the datanode and namenode is not properly connected. 
+
+I've also tried to setup another vnc node just to show the show the namenode. But I was having trouble to have the gui connect to the namenode. So the click just give a gui showing the terminal from the novnc container. 
+
+To run a actual hadoop wordcount, you would have to uncomment line# ... in the `docker-compose.yml`. You still need to run `docker exec -it namenode bash` to access the namenode. Hadoop itself works fine. You can access [localhost:9870](http://127.0.0.1:9870) to see details about each node. 
+
+**For sonarqube:** I just have the server set up. 
 
