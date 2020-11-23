@@ -87,3 +87,6 @@ To run a actual hadoop wordcount, you would have to uncomment line# ... in the `
 
 **For sonarqube:** I just have the server set up. 
 
+## Reference and credit links:
+
+
